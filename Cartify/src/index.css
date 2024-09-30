@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    /* outline: 1px dotted rgb(240, 143, 143); */ /* Change color and style as desired */
+  }

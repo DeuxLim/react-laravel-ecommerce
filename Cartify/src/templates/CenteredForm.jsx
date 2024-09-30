@@ -1,0 +1,16 @@
+import { Outlet } from "react-router-dom"
+
+function CenteredForm() {
+  return (
+    <div className="h-screen flex justify-center items-center flex-col gap-5 bg-slate-100">
+        <div className="w-1/4 h-auto shadow-lg p-5 rounded-md bg-white">
+            <div className="h-full">
+                <div className="flex flex-col gap-4">
+                   <Outlet/>
+                </div>
+            </div>
+        </div>
+    </div>
+  )
+}
+export default CenteredForm
