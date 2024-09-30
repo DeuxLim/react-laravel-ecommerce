@@ -3,23 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Support\Facades\Log;
 
 class RegisterRequest extends FormRequest
 {
-
-    protected function failedValidation(Validator $validator)
-    {
-        // Log the validation errors
-        Log::error('Validation failed with errors: ', $validator->errors()->all());
-
-        throw new HttpResponseException(response()->json([
-            'errors' => $validator->errors()
-        ], 422));
-    }
-
     /**
      * Determine if the user is authorized to make this request.
      *

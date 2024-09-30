@@ -13,9 +13,9 @@ axiosClient.interceptors.request.use(
 );
 
 axiosClient.interceptors.response.use(
-    function (response) {
+    function (response){
         return response;
-    }
+    },
 );
 
 export default axiosClient;

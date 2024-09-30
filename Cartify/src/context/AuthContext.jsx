@@ -29,7 +29,6 @@ export const AuthProvider = ({children}) => {
             setUser(data);
             setReady(true);
         } catch (error) {
-            console.log(error);
             setReady(true);
         }
     };
@@ -40,7 +39,6 @@ export const AuthProvider = ({children}) => {
         }
 
         if(token){
-            console.log(token);
             fetchUser();
         } else {
             setReady(true);

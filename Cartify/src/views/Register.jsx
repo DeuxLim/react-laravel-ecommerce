@@ -39,8 +39,8 @@ function Register() {
         // Password validation
         if (!inputs.password) {
             errors.password = "Password is required";
-        } else if (inputs.password.length < 6) {
-            errors.password = "Password must be at least 6 characters";
+        } else if (inputs.password.length < 8) {
+            errors.password = "Password must be at least 8 characters";
         }
 
         // Confirm Password validation
