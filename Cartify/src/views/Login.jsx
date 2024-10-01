@@ -1,9 +1,8 @@
 import { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom";
-import FormInput from "../templates/FormInput";
-import FormSubmitButton from "../templates/FormSubmitButton";
-import axiosClient from "../axios-client";
+import { FormInput, FormSubmitButton } from "../templates/CustomFormElements";
 import { AuthContext } from "../context/AuthContext";
+import axiosClient from "../axios-client";
 
 function Login() {
     const { login } = useContext(AuthContext);

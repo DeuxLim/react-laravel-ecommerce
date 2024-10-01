@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Navigation from '../components/Navigation'
 
-function DefaultLayout() {
+export default function PageLayout() {
   return (
     <div className='h-svh'>
         <Navigation />
@@ -10,5 +10,3 @@ function DefaultLayout() {
 
   )
 }
-
-export default DefaultLayout

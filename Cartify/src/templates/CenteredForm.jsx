@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext"
 import { useContext, useEffect } from "react"
 
-function CenteredForm() {
+export default function CenteredForm() {
     const { token } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -17,11 +17,10 @@ function CenteredForm() {
             <div className="w-1/4 h-auto shadow-lg p-5 rounded-md bg-white">
                 <div className="h-full">
                     <div className="flex flex-col gap-4">
-                    <Outlet/>
+                        <Outlet/>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-export default CenteredForm

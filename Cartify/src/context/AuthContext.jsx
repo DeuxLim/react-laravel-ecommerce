@@ -27,8 +27,9 @@ export const AuthProvider = ({children}) => {
         try {
             const { data } = await axiosClient.post('auth/authenticate');
             setUser(data);
-            setReady(true);
         } catch (error) {
+            console.log(error);
+        } finally {
             setReady(true);
         }
     };

@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import Login from './views/Login';
-import DefaultLayout from './views/DefaultLayout';
+import PageLayout from './templates/PageLayout';
 import Register from './views/Register'
 import CenteredForm from './templates/CenteredForm';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         path : '/',
         element : (
             <ProtectedRoute>
-                <DefaultLayout/>
+                <PageLayout/>
             </ProtectedRoute>
         ),
     },
