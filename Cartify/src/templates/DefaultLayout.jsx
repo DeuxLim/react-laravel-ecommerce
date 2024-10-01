@@ -3,9 +3,8 @@ import Navigation from '../components/Navigation'
 
 function DefaultLayout() {
   return (
-    <div>
+    <div className='h-svh'>
         <Navigation />
-
         <Outlet/>
     </div>
 

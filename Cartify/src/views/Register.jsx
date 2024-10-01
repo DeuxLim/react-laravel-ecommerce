@@ -139,6 +139,14 @@ function Register() {
                         color="blue"
                         size="lg"
                     />
+
+                    <FormSubmitButton
+                        linkTo="/auth"
+                        type="submit"
+                        label="Back to login"
+                        color="slate"
+                        size="lg"
+                    />
                 </div>
             </form>
         </>
