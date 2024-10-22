@@ -4,6 +4,7 @@ import PageLayout from './templates/PageLayout';
 import Register from './views/Register'
 import CenteredForm from './templates/CenteredForm';
 import ProtectedRoute from './components/ProtectedRoute';
+import Home from './templates/Home';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
                 <PageLayout/>
             </ProtectedRoute>
         ),
+        children: [
+            {
+                path : '/',
+                element : <Home />
+            }
+        ]
     },
     {
         path : '*',
