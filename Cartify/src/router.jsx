@@ -5,6 +5,7 @@ import Register from './views/Register'
 import CenteredForm from './templates/CenteredForm';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './templates/Home';
+import NewProductForm from './templates/NewProductForm';
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path : '/',
                 element : <Home />
+            },
+            {
+                path : '/seller/add-product',
+                element : <NewProductForm/>
             }
         ]
     },

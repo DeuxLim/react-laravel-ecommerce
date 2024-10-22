@@ -5,10 +5,10 @@ import Footer from '../components/Footer'
 export default function PageLayout() {
   return (
 
-    <div className='flex flex-col'>
+    <div className='flex flex-col min-h-screen'>
         <Navigation />
 
-        <div className='flex-1'>
+        <div className='flex-1 pb-10'>
             <Outlet/>
         </div>
 
