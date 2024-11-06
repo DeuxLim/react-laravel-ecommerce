@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Resources\CategoryResource;
 
 class CategoryController extends Controller
 {
@@ -15,18 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
-        return response($category, 200);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $categories = Category::all();
+        return CategoryResource::collection($categories);
     }
 
     /**
@@ -37,7 +29,8 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        // CONTINUE HERE
+        return response()->json($request);
     }
 
     /**
