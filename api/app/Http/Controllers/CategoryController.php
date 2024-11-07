@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Http\Resources\CategoryResource;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -29,8 +30,13 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        // CONTINUE HERE
-        return response()->json($request);
+        $validatedCategory = $request->validated();
+
+        $validatedCategory['slug'] = Str::slug($validatedCategory['category']);
+
+        $newCategory = Category::create($validatedCategory);
+
+        return new CategoryResource($newCategory);
     }
 
     /**
