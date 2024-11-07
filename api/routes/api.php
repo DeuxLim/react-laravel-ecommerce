@@ -34,5 +34,6 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('/categories', [CategoryController::class, 'index']);
     Route::post('/categories', [CategoryController::class, 'store']);
     Route::get('/categories/{category}', [CategoryController::class, 'show']);
+    Route::put('/categories/{category}/',[CategoryController::class, 'update']);
     Route::get('/categories/{category}/hierarchy',[CategoryController::class, 'getCategoryHierarchy']);
 });

@@ -13,7 +13,7 @@ class UpdateCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'category' => 'nullable|unique:categories,category|max:255',
+            'description' => 'nullable|max:255',
+            'icon' => 'nullable|mimes:jpg,png',
+            'parent_id' => 'nullable|exists:categories,id',
+            'sort_order' => 'nullable|integer|min:0'
         ];
     }
 }
