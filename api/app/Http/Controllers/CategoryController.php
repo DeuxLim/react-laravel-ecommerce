@@ -72,4 +72,16 @@ class CategoryController extends Controller
     {
         //
     }
+
+    /**
+     * Get category hierarchy
+     *
+     * @param  \App\Models\Category  $category
+     * @return \Illuminate\Http\Response
+     */
+    public function getCategoryHierarchy(Category $category)
+    {
+        $hierarchy = $category->load('subcategories');
+        return new CategoryResource($hierarchy);
+    }
 }
