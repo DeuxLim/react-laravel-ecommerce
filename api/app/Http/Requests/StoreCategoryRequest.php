@@ -29,7 +29,7 @@ class StoreCategoryRequest extends FormRequest
             "category" => 'required|unique:categories,category|max:255',
             "description" => 'required|max:255',
             "icon" => 'nullable|mimes:jpg,png',
-            "parent_id" => 'nullable|exists:categories,parent_id',
+            "parent_id" => 'nullable|exists:categories,id',
             "sort_order" => 'nullable|integer|min:0'
         ];
     }
