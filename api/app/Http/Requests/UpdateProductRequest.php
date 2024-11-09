@@ -24,7 +24,7 @@ class UpdateProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['nullable', 'string', 'max:255'],
+            'product' => ['nullable', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:255'],
             'price' => ['nullable', 'numeric', 'min:0.01'],
             'stock' => ['nullable', 'integer', 'min:0'],

@@ -17,7 +17,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();  // Auto-incrementing ID
-            $table->string('name')->unique();  // Unique product name
+            $table->string('product')->unique();  // Unique product name
             $table->string('slug')->unique();  // SEO-friendly slug for URLs
             $table->text('description');  // Product description (long text)
             $table->decimal('price', 10, 2);  // Product price (stored as decimal for precision)
