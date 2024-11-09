@@ -13,6 +13,10 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public const IS_USER = 0;
+    public const IS_ADMIN = 1;
+    public const IS_SELLER = 2;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -24,7 +28,7 @@ class User extends Authenticatable implements JWTSubject
         'username',
         'email',
         'password',
-        'seller',
+        'role_id',
     ];
 
     /**
