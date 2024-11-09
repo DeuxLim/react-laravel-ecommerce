@@ -47,7 +47,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return new ProductResource($product);
     }
 
     /**
@@ -59,7 +59,13 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $validatedProduct = $request->validated();
+
+        // TODO : slug needs to be updated also if name is updated.
+
+        $product->update($validatedProduct);
+
+        return new ProductResource($product);
     }
 
     /**
@@ -70,6 +76,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return response()->json(['message' => 'Product deleted successfully'], 200);
     }
 }

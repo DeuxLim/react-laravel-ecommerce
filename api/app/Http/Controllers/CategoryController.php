@@ -61,6 +61,8 @@ class CategoryController extends Controller
     {
         $updateFields = $request->validated();
 
+        // TODO : slug needs to be updated also if name is updated.
+
         $category->update($updateFields);
 
         return new CategoryResource($category);
