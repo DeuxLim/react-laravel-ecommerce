@@ -37,4 +37,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::put('/categories/{category}/',[CategoryController::class, 'update']);
     Route::get('/categories/{category}/hierarchy',[CategoryController::class, 'getCategoryHierarchy']);
     Route::delete('/categories/{category}', [CategoryController::class, 'destroy']);
+
+    Route::get('/products', [ProductController::class, 'index']);
+    Route::post('/products', [ProductController::class, 'store']);
 });

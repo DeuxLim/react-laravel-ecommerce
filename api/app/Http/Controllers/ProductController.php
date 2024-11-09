@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Http\Resources\ProductResource;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -15,17 +17,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $allProduct = Product::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return ProductResource::collection($allProduct);
     }
 
     /**
@@ -36,7 +30,13 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $validatedProduct = $request->validated();
+
+        $validatedProduct['slug'] = Str::slug($validatedProduct['name']);
+
+        $product = Product::create($validatedProduct);
+
+        return new ProductResource($product);
     }
 
     /**
@@ -46,17 +46,6 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
     {
         //
     }
