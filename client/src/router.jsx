@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import Login from './views/Login';
 import PageLayout from './templates/PageLayout';
 import Register from './views/Register'
-import CenteredForm from './templates/CenteredForm';
+import AuthForm from './templates/AuthForm';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './templates/Home';
 import NewProductForm from './templates/NewProductForm';
@@ -10,7 +10,7 @@ import NewProductForm from './templates/NewProductForm';
 const router = createBrowserRouter([
     {
         path : '/auth',
-        element : <CenteredForm/>,
+        element : <AuthForm/>,
         children: [
             {
                 path : '',

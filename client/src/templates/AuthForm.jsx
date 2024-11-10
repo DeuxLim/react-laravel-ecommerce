@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext"
 import { useContext, useEffect } from "react"
 
-export default function CenteredForm() {
+export default function AuthForm() {
     const { token } = useContext(AuthContext);
     const navigate = useNavigate();
 
