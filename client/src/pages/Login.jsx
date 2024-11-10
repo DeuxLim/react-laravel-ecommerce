@@ -1,8 +1,8 @@
 import { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom";
-import { FormInput, FormSubmitButton } from "../templates/CustomFormElements";
-import { AuthContext } from "../context/AuthContext";
-import axiosClient from "../axios-client";
+import { FormInput, FormSubmitButton } from "../components/FormElements";
+import { AuthContext } from "../contexts/AuthContext";
+import axiosClient from "../services/axiosService";
 
 function Login() {
     const { login } = useContext(AuthContext);

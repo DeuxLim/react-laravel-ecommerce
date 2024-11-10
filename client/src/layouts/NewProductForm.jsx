@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FormInput } from "./CustomFormElements";
+import { FormInput } from "../components/FormElements";
 
 export default function NewProductForm(){
     const [ FormData, setFormData ] = useState({

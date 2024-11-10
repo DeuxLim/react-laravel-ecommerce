@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom"
-import { AuthContext } from "../context/AuthContext"
+import { AuthContext } from "../contexts/AuthContext"
 import { useContext, useEffect } from "react"
 
 export default function AuthForm() {
