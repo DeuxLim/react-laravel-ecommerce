@@ -1,11 +1,11 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
-import PageLayout from './layouts/PageLayout';
-import Register from './pages/Register'
-import AuthForm from './layouts/AuthForm';
-import ProtectedRoute from './components/ProtectedRoute';
-import Home from './pages/Home';
-import NewProductForm from './layouts/NewProductForm';
+import Login from '../pages/Login';
+import PageLayout from '../layouts/PageLayout';
+import Register from '../pages/Register'
+import AuthForm from '../layouts/AuthForm';
+import { AdminRoute, UserRoute, SellerRoute } from './ProtectedRoutes';
+import Home from '../pages/Home';
+import NewProductForm from '../layouts/NewProductForm';
 
 const router = createBrowserRouter([
     // Authentication Routes ✅ 
@@ -24,13 +24,13 @@ const router = createBrowserRouter([
         ]
     },
 
-    // Main Dashboard route ⏳
+    // User Dashboard route ⏳
     {
         path : '/',
         element : (
-            <ProtectedRoute>
+            <UserRoute>
                 <PageLayout/>
-            </ProtectedRoute>
+            </UserRoute>
         ),
         children: [
             {
@@ -43,7 +43,11 @@ const router = createBrowserRouter([
     // Seller Dashboard Route ⏳
     {
         path : '/seller',
-        element : <div> seller page </div>,
+        element : (
+            <SellerRoute>
+                <PageLayout/>
+            </SellerRoute>
+        ),
         children : [
             {
                 path : 'new-product',
@@ -55,7 +59,11 @@ const router = createBrowserRouter([
     // Admin Dashboard Route ⏳
     {
         path : '/admin',
-        element : <div> admin page </div>
+        element :(
+            <AdminRoute>
+                <PageLayout/>
+            </AdminRoute>
+        )
     },
 
     // Fallback Route
