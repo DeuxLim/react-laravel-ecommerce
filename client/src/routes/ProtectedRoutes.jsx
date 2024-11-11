@@ -50,7 +50,7 @@ export function SellerRoute({children}){
         return <Navigate to="/auth" />;
     }
 
-    if(![2].includes(user.role_id)){
+    if(![1,2].includes(user.role_id)){
         return null;
     }
 

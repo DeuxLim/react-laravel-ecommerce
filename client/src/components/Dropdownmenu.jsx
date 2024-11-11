@@ -39,13 +39,13 @@ export default function DropdownMenu({ isOpen, setIsOpen }) {
                             <Link to="/profile" className="block py-2 px-4 text-left" role="menuitem">Profile</Link>
                         </li>
                         <li className="w-full hover:bg-slate-100">
-                            <Link to="/profile" className="block py-2 px-4 text-left" role="menuitem">Seller Center</Link>
+                            <Link to="/seller" className="block py-2 px-4 text-left" role="menuitem">Seller Center</Link>
                         </li>
                         <li className="w-full hover:bg-slate-100">
-                            <Link to="/seller/add-product" className="block py-2 px-4 text-left" role="menuitem">Add new product</Link>
+                            <Link to="/admin" className="block py-2 px-4 text-left" role="menuitem">Admin Dashboard</Link>
                         </li>
                         <li className="w-full hover:bg-slate-100">
-                            <Link to="/profile" className="block py-2 px-4 text-left" role="menuitem">Settings</Link>
+                            <Link to="/settings" className="block py-2 px-4 text-left" role="menuitem">Settings</Link>
                         </li>
                         <li className="w-full hover:bg-slate-100">
                             <button onClick={logout} className="block w-full text-left py-2 px-4" role="menuitem">

@@ -1,11 +1,17 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import Login from '../pages/Login';
-import PageLayout from '../layouts/PageLayout';
-import Register from '../pages/Register'
-import AuthForm from '../layouts/AuthForm';
 import { AdminRoute, UserRoute, SellerRoute } from './ProtectedRoutes';
-import Home from '../pages/Home';
+
+// layouts
+import UserLayout from '../layouts/UserLayout';
 import NewProductForm from '../layouts/NewProductForm';
+import SellerLayout from '../layouts/SellerLayout';
+import AdminLayout from '../layouts/AdminLayout';
+import AuthForm from '../layouts/AuthForm';
+
+// pages
+import Login from '../pages/Login';
+import Register from '../pages/Register'
+import Home from '../pages/Home';
 
 const router = createBrowserRouter([
     // Authentication Routes ✅ 
@@ -29,13 +35,17 @@ const router = createBrowserRouter([
         path : '/',
         element : (
             <UserRoute>
-                <PageLayout/>
+                <UserLayout/>
             </UserRoute>
         ),
         children: [
             {
-                path : '/',
+                path : '',
                 element : <Home />
+            },
+            {
+                path : '/profile',
+                element : <div>User dashboard</div>
             },
         ]
     },
@@ -45,10 +55,14 @@ const router = createBrowserRouter([
         path : '/seller',
         element : (
             <SellerRoute>
-                <PageLayout/>
+                <SellerLayout/>
             </SellerRoute>
         ),
         children : [
+            {
+                path : '',
+                element : <div>Seller dashboard</div>
+            },
             {
                 path : 'new-product',
                 element : <NewProductForm/>
@@ -61,9 +75,15 @@ const router = createBrowserRouter([
         path : '/admin',
         element :(
             <AdminRoute>
-                <PageLayout/>
+                <AdminLayout/>
             </AdminRoute>
-        )
+        ),
+        children : [
+            {
+                path : '',
+                element : <div>Admin dashboard</div>
+            }
+        ]
     },
 
     // Fallback Route
