@@ -1,5 +1,10 @@
+import { Outlet } from "react-router-dom";
+import Sidebar from "../components/ui/Sidebar";
 export default function SellerLayout(){
     return (
-        <div> SELLER LAYOUT </div>
+        <div className="flex h-screen">
+            <Sidebar/>
+            <Outlet/>
+        </div>
     );
 }
