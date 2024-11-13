@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom";
-import { FormInput, FormSubmitButton } from "../components/FormElements";
+import { FormInput, FormSubmitButton } from "../components/form/FormElements";
 import { AuthContext } from "../contexts/AuthContext";
 import axiosClient from "../services/axiosService";
 

@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { FormInput, FormSubmitButton} from "../components/FormElements";
+import { FormInput, FormSubmitButton} from "../components/form/FormElements";
 import { AuthContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axiosClient from "../services/axiosService";

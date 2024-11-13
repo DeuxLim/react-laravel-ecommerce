@@ -4,14 +4,14 @@ import { AdminRoute, UserRoute, SellerRoute } from './ProtectedRoutes';
 // layouts
 import UserLayout from '../layouts/UserLayout';
 import NewProductForm from '../layouts/NewProductForm';
-import SellerLayout from '../layouts/SellerLayout';
-import AdminLayout from '../layouts/AdminLayout';
 import AuthForm from '../layouts/AuthForm';
+import DashboardLayout from '../layouts/DashboardLayout';
 
 // pages
 import Login from '../pages/Login';
 import Register from '../pages/Register'
 import Home from '../pages/Home';
+
 
 const router = createBrowserRouter([
     // Authentication Routes ✅ 
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         path : '/seller',
         element : (
             <SellerRoute>
-                <SellerLayout/>
+                <DashboardLayout/>
             </SellerRoute>
         ),
         children : [
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
         path : '/admin',
         element :(
             <AdminRoute>
-                <AdminLayout/>
+                <DashboardLayout/>
             </AdminRoute>
         ),
         children : [
