@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Dropdownmenu from "./Dropdownmenu";
+import Dropdownmenu from "@/components/ui/Dropdownmenu";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 export default function Navigation() {
