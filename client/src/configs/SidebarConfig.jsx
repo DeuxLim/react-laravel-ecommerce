@@ -1,4 +1,4 @@
-import { FaHome, FaBoxOpen, FaShoppingCart, FaCreditCard, FaUsers, FaUser, FaLifeRing, FaFlag, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import { FaHome, FaBoxOpen, FaShoppingCart, FaCreditCard, FaUsers, FaUser, FaLifeRing, FaFlag, FaCog, FaSignOutAlt, FaBackspace } from 'react-icons/fa';
 import { FaUserShield, FaChartLine, FaTags } from 'react-icons/fa';
 
 export const SellerMenu = [
@@ -23,6 +23,7 @@ export const SellerMenu = [
     { 
         section: "DEFAULT", 
         tabs: {
+            'Back to shop' : { icon : <FaBackspace/>, link: "/" },
             'Settings': { icon: <FaCog />, link: "/seller/settings" },
             'Log out': { icon: <FaSignOutAlt />, link: "/logout" }
         }

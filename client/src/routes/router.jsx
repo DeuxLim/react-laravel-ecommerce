@@ -64,8 +64,8 @@ const router = createBrowserRouter([
                 element : <div>Seller dashboard</div>
             },
             {
-                path : 'new-product',
-                element : <NewProductForm/>
+                path: '*', // Fallback route for unmatched paths under /seller
+                element: <Navigate to="/seller" />
             }
         ]
     },
@@ -82,6 +82,10 @@ const router = createBrowserRouter([
             {
                 path : '',
                 element : <div>Admin dashboard</div>
+            },
+            {
+                path: '*', // Fallback route for unmatched paths under /seller
+                element: <Navigate to="/admin" />
             }
         ]
     },
