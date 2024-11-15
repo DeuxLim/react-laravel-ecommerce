@@ -18,8 +18,8 @@ export function FormInput({type, value, placeholder, required, onChange, error})
   )
 }
 
-export function FormSubmitButton({linkTo, type, label, color, size}) {
-    const buttonClass = `${color} ${size} w-full p-2 rounded-md text-white  font-medium text-center`;
+export function FormSubmitButton({linkTo, type, label, classes}) {
+    const buttonClass = `${classes} w-full p-2 rounded-md font-medium text-center`;
 
     return (
         linkTo ?

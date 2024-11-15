@@ -135,16 +135,14 @@ function Register() {
                     <FormSubmitButton
                         type="submit"
                         label="Register"
-                        color="bg-blue-600"
-                        size="text-lg"
+                        classes="text-white text-lg bg-blue-600"
                     />
 
                     <FormSubmitButton
                         linkTo="/auth"
                         type="submit"
                         label="Back to login"
-                        color="bg-slate-600"
-                        size="text-lg"
+                        classes="text-blue-600 text-lg bg-blue-100"
                     />
                 </div>
             </form>

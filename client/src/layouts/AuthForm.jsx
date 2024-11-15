@@ -13,8 +13,8 @@ export default function AuthForm() {
     }, [token, navigate]);
 
     return (
-        <div className="h-screen flex justify-center items-center flex-col gap-5 bg-slate-100">
-            <div className="w-1/4 h-auto shadow-lg p-5 rounded-md bg-white">
+        <div className="min-h-screen flex justify-center items-center flex-col gap-5 bg-slate-100 p-4">
+            <div className="w-full max-w-md shadow-lg p-5 rounded-md bg-white">
                 <div className="h-full">
                     <div className="flex flex-col gap-4">
                         <Outlet/>

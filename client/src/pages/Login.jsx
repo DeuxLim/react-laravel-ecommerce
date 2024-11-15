@@ -71,8 +71,7 @@ function Login() {
                 <FormSubmitButton
                     type="submit"
                     label="Log In"
-                    color="bg-blue-600"
-                    size="text-lg"
+                    classes="text-white text-lg bg-blue-600"
                 />
             </div>
         </form>
@@ -87,8 +86,7 @@ function Login() {
             linkTo="/auth/register"
             type="button"
             label="Create New Account"
-            color="bg-green-600"
-            size="text-md"
+            classes="text-blue-600 text-md bg-blue-100"
         />
     </>
   )
