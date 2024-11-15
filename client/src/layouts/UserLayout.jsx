@@ -8,7 +8,7 @@ export default function UserLayout() {
     <div className='flex flex-col min-h-screen'>
         <Navigation />
 
-        <div className='flex-1 pb-10'>
+        <div className='flex-1'>
             <Outlet/>
         </div>
 

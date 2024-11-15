@@ -1,5 +1,11 @@
+import { Outlet } from "react-router-dom";
+import DashboardLayout from "@/layouts/DashboardLayout"
+import { AdminMenu } from "@/configs/SidebarConfig";
+
 export default function AdminLayout(){
     return (
-        <div> ADMIN LAYOUT </div>
+        <DashboardLayout sidebarConfig={AdminMenu}>
+            <Outlet/>
+        </DashboardLayout>
     );
 }

@@ -3,7 +3,7 @@ import { AuthContext } from "@/contexts/AuthContext";
 import { Link } from "react-router-dom";
 
 
-export default function Sidebar({sections}){
+export default function Sidebar({config}){
     const { user } = useContext(AuthContext);    
 
     return(
@@ -32,7 +32,7 @@ export default function Sidebar({sections}){
                 <div className="h-full p-3 flex flex-col gap-6">
 
                     {/* Menu Sections */}
-                    {sections.map((sectionItem, sectionIndex) => (
+                    {config.map((sectionItem, sectionIndex) => (
                         <div key={sectionIndex}>
                             {/* Section Title */}
                             <div className={`py-4 ${sectionIndex !== 0 && "border-t"} text-black text-opacity-35 font-semibold`}>

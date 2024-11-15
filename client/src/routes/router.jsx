@@ -1,17 +1,17 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import { AdminRoute, UserRoute, SellerRoute } from './ProtectedRoutes';
+import { AdminRoute, UserRoute, SellerRoute } from '@/routes/ProtectedRoutes';
 
 // layouts
-import UserLayout from '../layouts/UserLayout';
-import NewProductForm from '../layouts/NewProductForm';
-import AuthForm from '../layouts/AuthForm';
-import DashboardLayout from '../layouts/DashboardLayout';
+import UserLayout from '@/layouts/UserLayout';
+import NewProductForm from '@/layouts/NewProductForm';
+import AuthForm from '@/layouts/AuthForm';
+import SellerLayout from '@/layouts/SellerLayout';
+import AdminLayout from '@/layouts/AdminLayout';
 
 // pages
-import Login from '../pages/Login';
-import Register from '../pages/Register'
-import Home from '../pages/Home';
-
+import Login from '@/pages/Login';
+import Register from '@/pages/Register'
+import Home from '@/pages/Home';
 
 const router = createBrowserRouter([
     // Authentication Routes ✅ 
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         path : '/seller',
         element : (
             <SellerRoute>
-                <DashboardLayout/>
+                <SellerLayout/>
             </SellerRoute>
         ),
         children : [
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
         path : '/admin',
         element :(
             <AdminRoute>
-                <DashboardLayout/>
+                <AdminLayout/>
             </AdminRoute>
         ),
         children : [
