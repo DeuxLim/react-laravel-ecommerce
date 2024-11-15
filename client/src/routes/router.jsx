@@ -3,7 +3,6 @@ import { AdminRoute, UserRoute, SellerRoute } from '@/routes/ProtectedRoutes';
 
 // layouts
 import UserLayout from '@/layouts/UserLayout';
-import NewProductForm from '@/layouts/NewProductForm';
 import AuthForm from '@/layouts/AuthForm';
 import SellerLayout from '@/layouts/SellerLayout';
 import AdminLayout from '@/layouts/AdminLayout';
