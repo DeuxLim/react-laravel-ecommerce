@@ -61,6 +61,7 @@ export const AdminMenu = [
     { 
         section: "SETTINGS", 
         tabs: {
+            'Back to shop' : { icon : <FaBackspace/>, link: "/" },
             'Site Settings': { icon: <FaCog />, link: "/admin/settings" },
             'Log out': { icon: <FaSignOutAlt />, link: "/logout" }
         }
