@@ -1,42 +1,62 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import Dropdownmenu from "@/components/ui/Dropdownmenu";
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { FaShoppingCart, FaSearch  } from 'react-icons/fa';
+import { FaOpencart } from "react-icons/fa6";
+import { IoMenu } from "react-icons/io5";
+import DropdownMenu from "./ui/Dropdownmenu";
 
 export default function Navigation() {
-    const [ isOpen, setIsOpen] = useState(false);
+    
 
     return (
-        <div className="h-auto min-h-16 flex flex-wrap items-center justify-between px-11 py-4 z-50 mx-60 sticky top-0 bg-white">
-
-            <div className="min-w-44">
-                <Link to="/" className="font-semibold text-xl text-nowrap">C A R T I F Y</Link>
-            </div>
-
-            <div>
-                <ul className="flex items-center justify-center gap-10 flex-wrap">
-                    <li>Menu1</li>
-                    <li>Menu2</li>
-                    <li>Menu3</li>
-                    <li>Menu4</li>
-                </ul>
+        <div className="container p-4 flex justify-between items-center sticky top-0 bg-white">
+            
+            {/* Logo / brandname */}
+            <div className="flex justify-start items-center gap-2">
+                <span>
+                    <FaOpencart className="font-bold text-4xl"/>
+                </span>
+                <h1 className="hidden md:block font-bold text-xl tracking-wide">
+                    cartify
+                </h1>
             </div>
 
 
-            <div className="flex justify-center items-center gap-4 relative flex-wrap">
-                <div>
-                    <input type="text" placeholder="Search product..." className="h-9 w-40 border rounded-full border-neutral-200 px-4 focus:w-60 transition-all"/>
+            
+            <div className="hidden md:flex gap-4">
+
+                {/* Searchbar */}
+                <div className="hidden md:block h-10 rounded-full bg-stone-100 px-3 transition-all duration-300 focus-within:w-80 w-36">
+                    <div className="flex items-center h-10">
+                        <span>
+                            <FaSearch />
+                        </span>
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            className="w-full rounded-2xl p-2 outline-none bg-transparent transition-all duration-300"
+                        />
+                    </div>
                 </div>
 
-                <div>
-                    <ShoppingCartOutlinedIcon/>
+
+                {/* icons */}
+                <div className="flex gap-4 items-center">
+                    <button className="h-10 aspect-square rounded-full bg-stone-100 flex items-center justify-center">
+                        <FaShoppingCart className="text-lg "/>
+                    </button>
+                    
+                    {/* TODO : MAKE THIS REUSABLE */}
+                    <DropdownMenu/>
                 </div>
 
-                <div>
-                    <Dropdownmenu isOpen={isOpen} setIsOpen={setIsOpen}/>
-                </div>
             </div>
 
+            {/* mobile hamburger menu */}
+            <div className="md:hidden">
+                <span>
+                    {/* TO DO : MAKE THIS FUNCTIONAL */}
+                    <IoMenu className="text-4xl"/>
+                </span>
+            </div>
         </div>
     )
 }

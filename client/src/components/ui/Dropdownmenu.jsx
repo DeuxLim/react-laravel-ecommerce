@@ -1,60 +1,40 @@
-import { Link } from "react-router-dom";
-import { AuthContext } from "@/contexts/AuthContext";
-import { useContext, useRef, useEffect } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
+import { MdOutlineAccountCircle  } from "react-icons/md";
+import ResponsiveMenu from "./ResponsiveMenu";
 
-export default function DropdownMenu({ isOpen, setIsOpen }) {
-    const { logout } = useContext(AuthContext);
+export default function DropdownMenu() {
+    const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
-    // Close dropdown if clicked outside
-    const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setIsOpen(false);
-        }
+    // Toggle dropdown
+    const toggleDropdown = () => {
+        setIsOpen((prev) => !prev);
     };
 
+    // Close dropdown on outside click
     useEffect(() => {
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
         };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
     return (
-        <div ref={dropdownRef} className="relative">
-            <div
-                className="cursor-pointer bg-gray-300 h-10 w-10 rounded-full flex items-center justify-center overflow-hidden"
-                onClick={() => setIsOpen((current) => !current)}
-                aria-haspopup="true"
-                aria-expanded={isOpen}
-                tabIndex={0}
-            >
-                <img src="https://picsum.photos/150" alt="Profile" />
-            </div>
+       <>
+            <div className="relative inline-block text-left" ref={dropdownRef}>
+                {/* Dropdown Button */}
+                <button
+                    onClick={toggleDropdown}
+                    className="relative h-10 aspect-square rounded-full bg-black flex items-center justify-center text-sm font-semibold transition-all hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                >
+                    <MdOutlineAccountCircle  className="text-3xl text-white"/>
+                </button>       
 
-            {isOpen && (
-                <nav className="absolute top-12 right-4 border rounded-md bg-white shadow-lg" role="menu">
-                    <ul className="flex flex-col items-start justify-start min-w-40 text-base">
-                        <li className="w-full hover:bg-slate-100">
-                            <Link to="/profile" className="block py-2 px-4 text-left" role="menuitem">Profile</Link>
-                        </li>
-                        <li className="w-full hover:bg-slate-100">
-                            <Link to="/seller" className="block py-2 px-4 text-left" role="menuitem">Seller Center</Link>
-                        </li>
-                        <li className="w-full hover:bg-slate-100">
-                            <Link to="/admin" className="block py-2 px-4 text-left" role="menuitem">Admin Dashboard</Link>
-                        </li>
-                        <li className="w-full hover:bg-slate-100">
-                            <Link to="/settings" className="block py-2 px-4 text-left" role="menuitem">Settings</Link>
-                        </li>
-                        <li className="w-full hover:bg-slate-100">
-                            <button onClick={logout} className="block w-full text-left py-2 px-4" role="menuitem">
-                                Logout
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            )}
-        </div>
+                <ResponsiveMenu isOpen={isOpen}/>        
+            </div>
+       </>
     );
 }
