@@ -3,7 +3,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-       sans: ['Roboto', 'Arial', 'sans-serif'],
+       sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif']
+      },
+      container: {
+        center: true
       },
     },
   },
