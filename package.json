@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "scripts" : {
+    "frontend" : "cd client && npm run dev",
+    "backend" : "cd api && php artisan serve",
+    "styles" : "cd client && npx tailwind -i ./src/styles/index.css -o ./src/styles/output.css --watch",
+    "dev" : " concurrently --kill-others-on-fail -n \"FRONTEND,BACKEND,STYLES\" \"npm run frontend\" \"npm run backend\" \"npm run styles\" "
+  }
+}
